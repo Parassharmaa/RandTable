@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <meta name="author" content="ParaZz">
+    <meta name="description" content="Application Where users enters the expense on the specific date and on end of the month the total expence is calculated.">
+    <meta name="application-name"  content="CalendarCalc">
+    <title>Fun With JS</title>
+    <style>
+        .caltab td {
+         padding:30px;   
+         border:2px solid black;   
+            
+        }
+        
+        .caltab table {
+            border:2px solid black; 
+            margin:auto;
+            margin-top:100px;
+            
+        }
+        
+        td {
+            width:20px;
+        }
+        
+        
+    
+    
+    </style>
+</head>
+<body>
+
+    <div class="caltab">
+        <table>
+            <tr id="row1"></tr>
+            <tr id="row2"></tr>
+            <tr id="row3"></tr>
+            <tr id="row4"></tr>
+            <tr id="row5"></tr>
+        </table>
+    </div>
+<script>
+    
+function randtable() {
+    for (q=1;q<6;q++) {
+     document.getElementById("row"+q).innerHTML="";
+    }
+        
+    
+    var p=1;
+    var addIn = document.createDocumentFragment();
+    for(i=1; i < 6; i++){
+        for(j=0; j<7;j++) {
+            var newDiv = document.createElement('td');
+            newDiv.id = 'r'+p;
+            addIn.appendChild(newDiv);
+            document.getElementById("row"+i).appendChild(addIn);
+            p++
+        }
+    } 
+}
+
+    function randcolor() {
+     for (n=1;n<=35;n++) {
+        document.getElementById("r"+n).style.backgroundColor = "#"+Math.floor(Math.random() * (999 - 111)) + 111;
+    
+         
+     }
+    }
+
+
+randtable();
+window.setInterval(randcolor,100); 
+    
+</script>
+
+</body>
+</html>
